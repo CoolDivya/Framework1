@@ -29,11 +29,23 @@ public class CreateAudioFingerprintTriggerPage extends BaseTest {
 	@FindBy(xpath="//a[@type='button']")
     WebElement Add_Trigger;
 	
+	@FindBy(xpath="//mat-sidenav-container[1]/mat-sidenav[1]/mat-nav-list[1]/div[1]/a[1]/mat-list-item[1]/div[1]")
+	WebElement Audio;
+	
+	@FindBy(xpath="//div[@fxlayoutalign='end start']//button[2]")
+	WebElement Add_Audio_Fingerprint;
+	
 	@FindBy(xpath="//mat-select[1]/div[1]/div[1]/span[1]")
 	WebElement Select_Type;
 	
 	@FindBy(name="name")
 	WebElement name;
+	
+	@FindBy(xpath="//div[1]/div[2]/div[2]/mat-form-field[1]/div[1]/div[1]/div[1]/mat-select[1]/div[1]/div[1]/span[1]")
+	WebElement client;
+	
+	@FindBy(xpath="//div[1]/div[1]/div[1]/mat-option[1]/span[1]")
+	List<WebElement> list_client;
 	
 	@FindBy(name="campaign")
 	WebElement campaign;
@@ -216,59 +228,52 @@ public class CreateAudioFingerprintTriggerPage extends BaseTest {
 	            	Thread.sleep(3000);
 	        		Trigger.click();
 	        		Thread.sleep(2000);
-	        		Add_Trigger.click();
-	        		Thread.sleep(3000);
-	        		Select_Type.click();	
-	            	
+	        		//Add_Trigger.click();
+	        		//Thread.sleep(3000);
+	        		//Select_Type.click();	
+	        		Audio.click();
+	        		Thread.sleep(2000);
+	        		
 	        		Cell cell = row.getCell(0);
 	        		
 	        		  if (cell != null) {
 		                	
 	        			  
-		                  String type1= cell.getStringCellValue();
-                          TestUtil.select_trigger_type(driver, type1);
+		                //  String type1= cell.getStringCellValue();
+                         // TestUtil.select_trigger_type(driver, type1);
                           
                           //Create Audio Fingerprint trigger for ACTV8 client
-                          if(type1.equalsIgnoreCase("Audio Fingerprint"))
-                          {
+                          //if(type1.equalsIgnoreCase("Audio Fingerprint"))
+                         // {
+	        			  Add_Audio_Fingerprint.click();
                             name.sendKeys(row.getCell(1).getStringCellValue()); 
                          	Thread.sleep(3000);
-                        	campaign.click();
-                        	Thread.sleep(3000);
+                         	client.click();
+                         	Thread.sleep(3000);
+                         	String str1="ACTV8";
+                         	for(int index=0;index<list_client.size();index++)
+                      	  {
+                      	     if(str1.equals(list_client.get(index).getText()))
+                      	     {
+                      		    TestUtil.javascript_button_click(driver,list_client.get(index));
+                      	     }
+                      	  }
+                         	
                         	String str=row.getCell(3).getStringCellValue();
-                            for(int index=0;index<list_campaign.size();index++)
+                        	campaign.sendKeys(str);
+                        	Thread.sleep(3000);
+                           /* for(int index=0;index<list_campaign.size();index++)
                         	  {
                         	     if(str.equals(list_campaign.get(index).getText()))
                         	     {
                         		    TestUtil.javascript_button_click(driver, list_campaign.get(index));
                         	     }
                         	  }
+                            */
                             
                             
-                            brand.sendKeys(row.getCell(7).getStringCellValue());
-                            driver.findElement(By.xpath("//form/div[2]/mat-form-field/div/div/div/mat-select/div/div/span")).click();
-                            for(int index=0;index<list_media_type.size();index++)
-                      	    {
-                    			String str1=row.getCell(8).getStringCellValue();
-                    			if(str1.equals(list_media_type.get(index).getText()))
-                      	        {
-                      		       TestUtil.javascript_button_click(driver,list_media_type.get(index));
-                      	        }
-                      	    }
-                            
-                            media.sendKeys(row.getCell(9).getStringCellValue());
-                            network.sendKeys(row.getCell(10).getStringCellValue());
-                            
-                            select_media.click();
-                    		Thread.sleep(2000);
-                    		selectmedia1.click();
-                    		Thread.sleep(1000);
-                    		Runtime.getRuntime().exec("D:\\Divyata Automation\\AutoIT\\VideoUpload.exe");
-                    		Thread.sleep(3000);
-                    		uploadm.click();
-                    		Thread.sleep(50000); 
-                             Delivery_Preset_Options.click();
-                             Thread.sleep(2000);  
+                            // Delivery_Preset_Options.click();
+                            // Thread.sleep(2000);  
                              
                              // Create Delivery Preset
                         	 driver.findElement(By.xpath("//app-delivery-preset-options[1]/div[1]/div[1]/div[1]/mat-form-field[1]/div[1]/div[1]/div[1]/mat-select[1]/div[1]/div[1]/span[1]")).click();
@@ -277,8 +282,8 @@ public class CreateAudioFingerprintTriggerPage extends BaseTest {
                      		//Create Delivery Preset
                     		for(int index=0;index<list_PresetOptions.size();index++)
                       	    {
-                    			String str1=row.getCell(4).getStringCellValue();
-                    			if(str1.equals(list_PresetOptions.get(index).getText()))
+                    			String stri=row.getCell(4).getStringCellValue();
+                    			if(stri.equals(list_PresetOptions.get(index).getText()))
                       	        {
                       		       TestUtil.javascript_button_click(driver,list_PresetOptions.get(index));
                       	        }
@@ -305,11 +310,34 @@ public class CreateAudioFingerprintTriggerPage extends BaseTest {
                     	    this.Deliver_Preset_Options();
                     		Thread.sleep(2000);
                     		Fingerprint_Options.click();
+                    		Thread.sleep(2000);
+                    		brand.sendKeys(row.getCell(7).getStringCellValue());
+                            driver.findElement(By.xpath("//form/div[2]/mat-form-field/div/div/div/mat-select/div/div/span")).click();
+                            for(int index=0;index<list_media_type.size();index++)
+                      	    {
+                    			String strr=row.getCell(8).getStringCellValue();
+                    			if(strr.equals(list_media_type.get(index).getText()))
+                      	        {
+                      		       TestUtil.javascript_button_click(driver,list_media_type.get(index));
+                      	        }
+                      	    }
+                            
+                            media.sendKeys(row.getCell(9).getStringCellValue());
+                            network.sendKeys(row.getCell(10).getStringCellValue());
+                            
+                            select_media.click();
+                    		Thread.sleep(2000);
+                    		selectmedia1.click();
+                    		Thread.sleep(1000);
+                    		Runtime.getRuntime().exec("D:\\Divyata Automation\\AutoIT\\VideoUpload.exe");
+                    		Thread.sleep(3000);
+                    		uploadm.click();
+                    		Thread.sleep(50000); 
                     		TestUtil.javascript_button_click(driver,create_trigger);
                     		Thread.sleep(2000);
                     		
                          }
-                        }
+                        //}
 	            }
 	        }
 		return new CreateTouchTriggerPage(driver); 

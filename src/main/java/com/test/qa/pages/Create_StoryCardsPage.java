@@ -98,7 +98,7 @@ public class Create_StoryCardsPage extends BaseTest {
 						     
 						     select_image.click();
 						     select_img.click();
-						     Runtime.getRuntime().exec(prop.getProperty("storycard_image_upload"));
+						     Runtime.getRuntime().exec("D:\\Divyata Automation\\Automation\\AutoIT\\FileUpload.exe");
 						     Thread.sleep(3000);
 			                 upload.click();
 			                 Thread.sleep(6000);

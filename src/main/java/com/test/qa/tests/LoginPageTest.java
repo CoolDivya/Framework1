@@ -63,13 +63,13 @@ public class LoginPageTest extends BaseTest {
     {
     	
     	 
-    	storycards=loginPage.login(prop.getProperty("login_screen_path"));
+    	AudioFingerPrint=loginPage.login(prop.getProperty("login_screen_path"));
     	
     	//AudioFingerPrint.create_trigger();
    }
-    /*
     
-    @Test(priority=1)
+    
+   /* @Test(priority=1)
     public void Create_CampaignTest() throws IOException, InterruptedException, EncryptedDocumentException, InvalidFormatException
     {
 	    campaign.Open_Campaign_page();     
@@ -82,11 +82,11 @@ public class LoginPageTest extends BaseTest {
 
     {
          
-	   Touch=CreateContent.Create_Content();
+	   advSearch=CreateContent.Create_Content();
 
     }
 
-/*
+
    @Test(priority=3)
     public void AdvSearch_By_contentId() throws IOException, InterruptedException, EncryptedDocumentException, InvalidFormatException
 
@@ -162,11 +162,11 @@ public class LoginPageTest extends BaseTest {
  	 public void AdvSearch_By_UpdatedDate() throws IOException, InterruptedException, EncryptedDocumentException, InvalidFormatException
     {
      
- 		AudioFingerPrint=advSearch.updated_date();  
+ 		storycards=advSearch.updated_date();  
     
     }
  	
-
+*/
  	 @Test(priority=11)
  	 public void create_AudioFingerprintTrigger() throws IOException, InterruptedException, EncryptedDocumentException, InvalidFormatException
     {
@@ -174,14 +174,14 @@ public class LoginPageTest extends BaseTest {
  		Touch=AudioFingerPrint.create_trigger();
     
     }
-   
- 	 @Test(priority=12)
+  /* 
+ 	@Test(priority=12)
  	 public void create_TouchTrigger() throws IOException, InterruptedException, EncryptedDocumentException, InvalidFormatException
     {
      Touch.create_trigger();
     
     }
-   */ 
+ 
     @Test(priority=13)
  	 public void create_StoryCards() throws IOException, InterruptedException, EncryptedDocumentException, InvalidFormatException
     {
@@ -189,8 +189,8 @@ public class LoginPageTest extends BaseTest {
     	 storycards.create_story_card();
     
     }
-  /*
-    
+  
+    /*
     @Test(priority=14)
 	 public void search_trigger() throws IOException, InterruptedException, EncryptedDocumentException, InvalidFormatException
    {

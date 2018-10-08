@@ -402,7 +402,7 @@ public class ContentAdvancedSearchPage extends BaseTest {
 		 }
 		 
 		 
-		 public CreateAudioFingerprintTriggerPage updated_date() throws EncryptedDocumentException, InvalidFormatException, IOException, InterruptedException
+		 public Create_StoryCardsPage updated_date() throws EncryptedDocumentException, InvalidFormatException, IOException, InterruptedException
 		 {
 	          
 		
@@ -443,7 +443,7 @@ public class ContentAdvancedSearchPage extends BaseTest {
 	   	    				 }
 	   				 }
 	             }
-					return new CreateAudioFingerprintTriggerPage(driver);
+					return new Create_StoryCardsPage(driver);
 			
 	          
 		 }

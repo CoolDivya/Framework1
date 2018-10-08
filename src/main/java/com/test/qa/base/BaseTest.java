@@ -32,7 +32,7 @@ public class BaseTest {
 
                         prop= new Properties();
 
-                        FileInputStream fs= new FileInputStream("D:\\Divyata Automation\\Selenium\\Automation Test\\Automation1\\src\\main\\java\\com\\test\\qa\\config\\config.properties");
+                        FileInputStream fs= new FileInputStream("C:\\Users\\k2actv801\\git\\Framework1\\src\\main\\java\\com\\test\\qa\\config\\config.properties");
 
                         prop.load(fs);
 
@@ -66,7 +66,7 @@ public class BaseTest {
 
                                    
 
-                    	System.setProperty("webdriver.chrome.driver","D:\\Divyata QA\\chrome exe\\chromedriver.exe");
+                    	System.setProperty("webdriver.chrome.driver","D:\\Divyata Automation\\Automation\\chromedriver_win32\\chromedriver.exe");
                 		driver=new ChromeDriver();
 
                    }

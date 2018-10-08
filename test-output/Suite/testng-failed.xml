@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Suite]">
-  <test thread-count="5" name="Test(failed)">
+<suite thread-count="3" name="Failed suite [Suite]">
+  <test thread-count="3" name="Test(failed)">
     <classes>
       <class name="com.test.qa.tests.LoginPageTest">
         <methods>
           <include name="close"/>
           <include name="setup"/>
-          <include name="create_StoryCards"/>
           <include name="login"/>
+          <include name="create_AudioFingerprintTrigger"/>
         </methods>
       </class> <!-- com.test.qa.tests.LoginPageTest -->
     </classes>

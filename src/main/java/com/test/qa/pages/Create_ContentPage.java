@@ -93,7 +93,7 @@ public class Create_ContentPage extends BaseTest{
 	
 
 	 
-	 public CreateTouchTriggerPage Create_Content() throws EncryptedDocumentException, InvalidFormatException, IOException, InterruptedException
+	 public ContentAdvancedSearchPage Create_Content() throws EncryptedDocumentException, InvalidFormatException, IOException, InterruptedException
 	 {
 		
 		
@@ -303,7 +303,7 @@ public class Create_ContentPage extends BaseTest{
 	                  //  }
                  
 	              }
-		return new CreateTouchTriggerPage(driver);
+		return new ContentAdvancedSearchPage(driver);
 	 }
 	    	 
 	    	 

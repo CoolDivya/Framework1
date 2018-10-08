@@ -46,11 +46,11 @@ public class LoginPage extends BaseTest {
 
    
 
-    public Create_StoryCardsPage login(String path) throws IOException, InterruptedException, EncryptedDocumentException, InvalidFormatException
+    public CreateAudioFingerprintTriggerPage login(String path) throws IOException, InterruptedException, EncryptedDocumentException, InvalidFormatException
 
     {
     	
-    	 FileInputStream fs=new FileInputStream("D:\\Divyata Automation\\Selenium\\Automation Test\\Automation1\\file\\data.xlsx");
+    	 FileInputStream fs=new FileInputStream("C:\\Users\\k2actv801\\git\\Framework1\\file\\data.xlsx");
     	 Workbook w= WorkbookFactory.create(fs);
     			
     	 Sheet sh=w.getSheet("login");
@@ -74,7 +74,7 @@ public class LoginPage extends BaseTest {
                     
               TestUtil.screenshot(driver,path);
 
-              return new Create_StoryCardsPage(driver);
+              return new CreateAudioFingerprintTriggerPage(driver);
 
     }
 }
