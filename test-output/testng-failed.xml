@@ -6,9 +6,8 @@
       <class name="com.test.qa.tests.LoginPageTest">
         <methods>
           <include name="close"/>
+          <include name="AddBeacons"/>
           <include name="setup"/>
-          <include name="login"/>
-          <include name="create_AudioFingerprintTrigger"/>
         </methods>
       </class> <!-- com.test.qa.tests.LoginPageTest -->
     </classes>

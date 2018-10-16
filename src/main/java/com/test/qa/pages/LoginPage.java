@@ -46,7 +46,7 @@ public class LoginPage extends BaseTest {
 
    
 
-    public CreateAudioFingerprintTriggerPage login(String path) throws IOException, InterruptedException, EncryptedDocumentException, InvalidFormatException
+    public AdBeacon login(String path) throws IOException, InterruptedException, EncryptedDocumentException, InvalidFormatException
 
     {
     	
@@ -74,7 +74,7 @@ public class LoginPage extends BaseTest {
                     
               TestUtil.screenshot(driver,path);
 
-              return new CreateAudioFingerprintTriggerPage(driver);
+              return new AdBeacon(driver);
 
     }
 }
