@@ -9,6 +9,8 @@ import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
 import com.test.qa.base.BaseTest;
+import com.test.qa.pages.AdBeacon;
+import com.test.qa.pages.AddUser;
 import com.test.qa.pages.ContentAdvancedSearchPage;
 import com.test.qa.pages.CreateAudioFingerprintTriggerPage;
 import com.test.qa.pages.CreateTouchTriggerPage;
@@ -27,6 +29,8 @@ public class LoginPageTest extends BaseTest {
     CreateTouchTriggerPage Touch;
     Create_StoryCardsPage storycards;
     SearchTriggerPage searchTrigger;
+    AddUser adduser;
+    AdBeacon addBeacon;
     
 
 
@@ -53,6 +57,8 @@ public class LoginPageTest extends BaseTest {
                     Touch=new CreateTouchTriggerPage(driver);
                     storycards= new Create_StoryCardsPage(driver);
                     searchTrigger=new SearchTriggerPage(driver);
+                    adduser=new AddUser(driver);
+                    addBeacon=new AdBeacon(driver);
 
     }
 
@@ -63,7 +69,7 @@ public class LoginPageTest extends BaseTest {
     {
     	
     	 
-    	AudioFingerPrint=loginPage.login(prop.getProperty("login_screen_path"));
+    	addBeacon=loginPage.login(prop.getProperty("login_screen_path"));
     	
     	//AudioFingerPrint.create_trigger();
    }
@@ -166,7 +172,6 @@ public class LoginPageTest extends BaseTest {
     
     }
  	
-*/
  	 @Test(priority=11)
  	 public void create_AudioFingerprintTrigger() throws IOException, InterruptedException, EncryptedDocumentException, InvalidFormatException
     {
@@ -174,7 +179,7 @@ public class LoginPageTest extends BaseTest {
  		Touch=AudioFingerPrint.create_trigger();
     
     }
-  /* 
+   
  	@Test(priority=12)
  	 public void create_TouchTrigger() throws IOException, InterruptedException, EncryptedDocumentException, InvalidFormatException
     {
@@ -190,7 +195,7 @@ public class LoginPageTest extends BaseTest {
     
     }
   
-    /*
+    
     @Test(priority=14)
 	 public void search_trigger() throws IOException, InterruptedException, EncryptedDocumentException, InvalidFormatException
    {
@@ -198,7 +203,26 @@ public class LoginPageTest extends BaseTest {
     	searchTrigger.search_trigger();
    
    }
-    */
+
+    
+    
+    @Test(priority=15)
+	 public void AddUser() throws IOException, InterruptedException, EncryptedDocumentException, InvalidFormatException
+   {
+    
+    	adduser.adduser();
+   
+   }
+   */
+   
+    @Test(priority=16)
+	 public void AddBeacons() throws IOException, InterruptedException, EncryptedDocumentException, InvalidFormatException
+  {
+   
+   addBeacon.add_Beacons();
+  
+  }
+   
     @AfterSuite
 
     public void close()
